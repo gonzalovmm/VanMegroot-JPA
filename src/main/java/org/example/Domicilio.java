@@ -1,6 +1,7 @@
 package org.example;
 
 import lombok.*;
+import org.hibernate.envers.Audited;
 
 import javax.persistence.*;
 
@@ -12,6 +13,7 @@ import javax.persistence.*;
 @Builder
 
 @Entity
+@Audited
 public class Domicilio {
 
     @Id

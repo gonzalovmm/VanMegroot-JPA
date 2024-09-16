@@ -1,5 +1,6 @@
 package org.example;
 import lombok.*;
+import org.hibernate.envers.Audited;
 
 import javax.persistence.*;
 
@@ -11,6 +12,7 @@ import javax.persistence.*;
 @Getter
 
 @Entity
+@Audited
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

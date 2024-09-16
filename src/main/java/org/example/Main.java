@@ -13,6 +13,7 @@ public class Main {
         try {
             entityManager.getTransaction().begin(); //Se inicia una transacción
 
+            /*
             Factura factura1 = Factura.builder()
                     .numero(11)
                     .fecha("2023-01-01")
@@ -83,10 +84,16 @@ public class Main {
             det2.setFactura(factura1);
 
 
-            factura1.setTotal(120);
+            factura1.setTotal(120);*/
+            Factura factura1 = entityManager.find(Factura.class, 1L);
+            factura1.setNumero(40);
 
-            entityManager.persist(factura1);
-            entityManager.flush();//Sirve para limpiar la conexión
+            entityManager.merge(factura1);
+
+            entityManager.flush();
+
+            //entityManager.persist(factura1);
+            //entityManager.flush();//Sirve para limpiar la conexión
             entityManager.getTransaction().commit();//Sirve para terminar la persistencia
             System.out.println("Se realizó la persistencia de los datos en la base de datos.");
         } catch (Exception e){

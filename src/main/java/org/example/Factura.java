@@ -2,6 +2,7 @@ package org.example;
 
 import lombok.*;
 import org.hibernate.annotations.Cascade;
+import org.hibernate.envers.Audited;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -16,6 +17,7 @@ import java.util.Set;
 @Builder
 
 @Entity
+@Audited
 public class Factura implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
